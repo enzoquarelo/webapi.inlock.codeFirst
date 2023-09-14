@@ -16,8 +16,7 @@ namespace webapi.inlock.codeFirst.manha.Domains
         public Guid IdEstudio { get; set; }
         //instancia a propriedade do tipo estudio para fazer a referencia com a foreignKey de IdEstudio
         [ForeignKey("IdEstudio")]
-        public Estudio Estudio { get; set; }
-
+        public Estudio? Estudio { get; set; }
 
 
         [Column(TypeName = "VARCHAR(100)")]
@@ -35,7 +34,5 @@ namespace webapi.inlock.codeFirst.manha.Domains
         [Column(TypeName = "Decimal(4,2)")]
         [Required(ErrorMessage = "Preço do jogo obrigatório!")]
         public decimal Valor { get; set; }
-
-        public virtual Estudio? IdEstudioNavigation { get; set; }
     }
 }
